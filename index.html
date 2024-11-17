@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Site</title>
+
+  <!-- Link to CSS file -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Feather icons (optional, if you're using them) -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo"><img src="hnm.png" alt="Logo"></a>
+    <nav class="nav-icons">
+      <a href="#" id="search-icon"><i data-feather="search"></i></a> <!-- Search Icon -->
+      <a href="signin.html"><i data-feather="user"></i></a> <!-- User Icon -->
+      <a href="favorites.html"><i data-feather="heart"></i></a> <!-- Heart Icon -->
+      <a href="cart.html"><i data-feather="shopping-cart"></i></a> <!-- Shopping Cart Icon -->
+      <a href="menu.html"><i data-feather="menu"></i></a> <!-- Menu Icon -->
+    </nav>
+  </header>
+
+  <!-- Search Bar & Suggestions -->
+  <div id="search-container">
+    <div id="search-panel">
+      <div class="search-wrapper">
+        <i data-feather="search" id="search-icon-bar"></i> <!-- Search Icon before the bar -->
+        <input type="text" id="search-bar" placeholder="Search for products..." oninput="showSuggestions()">
+        <button id="close-search" onclick="closeSearch()"><i data-feather="x"></i></button> <!-- Close Button -->
+      </div>
+      <div id="suggestions" class="suggestions">
+        <!-- Suggestions will appear here dynamically -->
+        <div class="suggestion-item">Shirt</div>
+        <div class="suggestion-item">Jeans</div>
+        <div class="suggestion-item">Jacket</div>
+        <div class="suggestion-item">Shoes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Links Under Navbar (Text Links) -->
+  <div id="under-navbar-links">
+    <a href="#" class="active">Women</a>
+    <a href="#">Men</a>
+    <a href="#">Kids</a>
+    <a href="#">Home</a>
+  </div>
+
+  <!-- Video Container -->
+  <div id="video-container">
+    <video id="promo-video" autoplay muted loop>
+      <source src="h.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+      <!-- Shop Now Button -->
+  <a href="shop.html" class="shop-now-btn">Shop Now</a>
+  <div id="new-arrivals-text">
+    <span class="italic">New arrivals</span>
+  </div>
+  
+</div>
+
+<div class="container">
+    <!-- Left container with clickable image -->
+    <div class="left-container">
+      <a href="#">
+        <div class="outer-square">
+          <div class="inner-square"></div>
+        </div>
+      </a>
+      <img src="pic1.jpg" alt="Left Image" />
+    </div>
+    
+    <!-- Right container with clickable image -->
+    <div class="right-container">
+      <a href="#">
+        <div class="outer-square">
+          <div class="inner-square"></div>
+        </div>
+      </a>
+      <img src="pic3.jpg" alt="Right Image" />
+    </div>
+  </div>
+  
+  
+  
+  <div id="overlay"></div>
+
+  <!-- Link to JavaScript file -->
+  <script src="script.js"></script>
+
+  <script>
+    // Initialize Feather icons (if you're using them)
+    feather.replace();
+  </script>
+</body>
+</html>
