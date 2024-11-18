@@ -205,6 +205,8 @@ header .logo img {
   #under-navbar-links a:hover {
     color: #000;
   }
+
+
   
 /* Video Background */
 #video-container {
@@ -372,6 +374,7 @@ header .logo img {
     word-spacing: 15px; /* Spacing between words */
     opacity: 1; /* Full opacity for solid text */
     z-index: 1;  /* Ensure text is above the video */
+    user-select: none;  
   }
 
   .italic {
@@ -434,8 +437,8 @@ header .logo img {
   /* Inner square with black border and hard corners */
 /* Inner square inside the outer square */
 .inner-square {
-    width: 60%;  /* Inner square width */
-    height: 60%; /* Inner square height */
+    width: 50%;  /* Inner square width */
+    height: 50%; /* Inner square height */
     border: 1.5px solid black; /* Black border */
     background-color: white;
     position: absolute;
@@ -457,4 +460,158 @@ header .logo img {
     z-index: 3;
 }
 
+/* Common styling for both price boxes */
+.price-box {
+  background-color: white; /* White background */
+  color: black;            /* Black text */
+  border: none;            /* No border */
+  position: absolute;      /* Absolute positioning */
+  z-index: 4;              /* Ensure the box appears above the image */
+  user-select: none;       /* Make text unselectable */
+}
 
+/* Specific styling for the left price box */
+.left-price-box {
+  padding: 1px 4px;      /* Adjust padding for size */
+  font-size: 14px;         /* Adjust font size */
+  bottom: 210.5px;            /* Adjust distance from the bottom */
+  left: 430px;              /* Adjust distance from the left side */
+  width: 50px;            /* Adjust the width */
+  height: auto;            /* Adjust the height */
+}
+
+/* Specific styling for the right price box */
+.right-price-box {
+  padding: 1px 4px;       /* Adjust padding for size */
+  font-size: 14px;         /* Adjust font size */
+  bottom: 210px;            /* Adjust distance from the bottom */
+  right: 50px;             /* Adjust distance from the right side */
+  width: 50px;            /* Adjust the width */
+  height: auto;            /* Adjust the height */
+}
+
+/* New Section Styling */
+.new-section {
+  display: flex;
+  justify-content: space-between; /* This ensures space between the two elements */
+  align-items: center;
+  padding: 10px 10px;
+  background-color: #f4464600; /* Light background for the section */
+  margin-top: 10%;
+}
+
+/* Styling for 'New In' text */
+.new-in-text {
+  font-size: 16px;
+  color: black; /* Text color for 'New In' */
+  margin-right: 30px; /* Space between 'New In' and 'View All' */
+}
+
+/* Styling for 'View All' link */
+.view-all-link {
+  font-size: 16px;
+  color: black; /* Link color */
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 30px; /* Adds space to the left of the link (if needed) */
+}
+
+.view-all-link:hover {
+    text-decoration: underline; /* Add underline on hover */
+  color: rgb(107, 105, 105); /* Darker shade on hover */
+}
+
+/* Container for the images */
+.image-container {
+    display: flex;                 /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Ensure images are spaced evenly */
+    gap: 0;                         /* Remove any gap between images */
+    margin-top: 0.3%;               /* Add space between sections */
+    width: 100%;                    /* Ensure the container takes full width */
+    background-color: transparent;  /* Make sure the background is transparent */
+  }
+  
+  /* Each part of the container (divide into 6 equal sections) */
+  .image-part {
+    flex: 1;                        /* Each part takes equal space */
+    max-width: calc(100% / 6);       /* Make sure each part takes up 1/6th of the container */
+  }
+  
+  .image-part img {
+    width: 100%;                    /* Make the image fill the container */
+    height: auto;                   /* Maintain aspect ratio */
+    display: block;                 /* Prevent extra space below images */
+    transition: transform 0.3s ease; /* Add smooth transition for hover effect */
+  }
+  
+  /* Hover effect for images */
+  .image-part:hover img {
+    transform: scale(1.05);         /* Slight zoom effect on hover */
+  }
+
+  .image-container2 {
+    display: flex;                 /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Ensure images are spaced evenly */
+    gap: 0;                         /* Remove any gap between images */
+    margin-top: 0%;               /* Add space between sections */
+    width: 100%;                    /* Ensure the container takes full width */
+    background-color: transparent;  /* Make sure the background is transparent */
+  }
+  
+  /* Each part of the container (divide into 6 equal sections) */
+  .image-part2 {
+    flex: 1;                        /* Each part takes equal space */
+    max-width: calc(100% / 6);       /* Make sure each part takes up 1/6th of the container */
+  }
+  
+  .image-part2 img {
+    width: 100%;                    /* Make the image fill the container */
+    height: auto;                   /* Maintain aspect ratio */
+    display: block;                 /* Prevent extra space below images */
+    transition: transform 0.3s ease; /* Add smooth transition for hover effect */
+  }
+  
+  /* Hover effect for images */
+  .image-part2:hover img {
+    transform: scale(1.05);         /* Slight zoom effect on hover */
+  }
+
+/* Container to hold the product items */
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0%; /* Space between the two products */
+    margin-top: 30px; /* Space from the top */
+  }
+  
+  /* Common styles for each product item */
+  .product-item {
+    width: 48%; /* Each item will take up almost half of the container */
+    text-align: center; /* Center align the content inside the item */
+    position: relative; /* Needed for positioning of the image and description */
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensure images cover the container without stretching */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+  }
+  
+
+  
+  /* Styling for product description */
+  .product-description {
+    margin-top: 10px;
+    align-items: baseline;
+  }
+  
+  .product-description a {
+    font-size: 16px;
+    color: black;
+    text-decoration: none;
+  }
+  
+
+  
