@@ -380,26 +380,25 @@ header .logo img {
   .italic {
     font-style: italic;
   }
-  
 /* Container to hold the two sections */
 .container {
     display: flex;
     height: 100vh; /* Full viewport height */
-  }
-  
-  /* Left container and right container */
-  .left-container,
-  .right-container {
+}
+
+/* Left container and right container */
+.left-container,
+.right-container {
     flex: 1; /* Each container takes up equal space */
     position: relative;
     border: 1.6px solid black; /* Adds a thin black border around each container */
     overflow: hidden; /* Ensures nothing overflows */
     top: 50px;
-  }
-  
-  /* Anchor tags to make images clickable */
-  .left-container a,
-  .right-container a {
+}
+
+/* Anchor tags to make images clickable */
+.left-container a,
+.right-container a {
     display: block;
     width: 100%;
     height: 100%;
@@ -407,11 +406,11 @@ header .logo img {
     top: 0;
     left: 0;
     z-index: 2; /* Ensures the link is above the image */
-  }
-  
-  /* Make sure the images inside the containers fill the space */
-  .left-container img,
-  .right-container img {
+}
+
+/* Make sure the images inside the containers fill the space */
+.left-container img,
+.right-container img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the image covers the container without stretching */
@@ -419,25 +418,32 @@ header .logo img {
     top: 0;
     left: 0;
     z-index: 1; /* Ensures image is below the anchor */
-  }
-  
-  /* Optional overlay to darken the image */
-  .left-container:after,
-  .right-container:after {
+}
+
+/* Optional overlay to darken the image */
+.left-container:after,
+.right-container:after {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /*background: rgba(0, 0, 0, 0.5);*/ /* Darken the image a little */
+    background: rgba(0, 0, 0, 0.4); /* Darken the image slightly on hover */
     z-index: 1; /* Ensures the overlay appears above the image */
-  }
-  
-  /* Inner square with black border and hard corners */
-/* Inner square inside the outer square */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for the overlay */
+}
+
+/* Hover effect to show the overlay */
+.left-container:hover:after,
+.right-container:hover:after {
+    opacity: 1; /* Make the overlay visible on hover */
+}
+
+/* Inner square with black border and hard corners */
 .inner-square {
-    width: 50%;  /* Inner square width */
+    width: 50%; /* Inner square width */
     height: 50%; /* Inner square height */
     border: 1.5px solid black; /* Black border */
     background-color: white;
@@ -445,50 +451,75 @@ header .logo img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centers the square inside the outer one */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for the square */
 }
 
 /* Outer square with transparent white background and black border */
 .outer-square {
     position: absolute;
-    top: 65%;   /* Adjust the top position */
-    left: 80%;  /* Adjust the left position */
-    width: 3%;  /* Adjust the width */
+    top: 65%; /* Adjust the top position */
+    left: 80%; /* Adjust the left position */
+    width: 3%; /* Adjust the width */
     height: 3%; /* Adjust the height */
     background-color: rgba(255, 255, 255, 0); /* Transparent white background */
     border: 0.4px solid white; /* Black border */
     transform: translate(-50%, -50%); /* Centers the square */
     z-index: 3;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for the square */
+}
+
+/* Hover effect to show the inner and outer square */
+.left-container:hover .inner-square,
+.right-container:hover .inner-square,
+.left-container:hover .outer-square,
+.right-container:hover .outer-square {
+    opacity: 1; /* Make them visible on hover */
 }
 
 /* Common styling for both price boxes */
 .price-box {
-  background-color: white; /* White background */
-  color: black;            /* Black text */
-  border: none;            /* No border */
-  position: absolute;      /* Absolute positioning */
-  z-index: 4;              /* Ensure the box appears above the image */
-  user-select: none;       /* Make text unselectable */
+    background-color: white; /* White background */
+    color: black; /* Black text */
+    border: none; /* No border */
+    position: absolute; /* Absolute positioning */
+    z-index: 4; /* Ensure the box appears above the image */
+    user-select: none; /* Make text unselectable */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(10px); /* Initially position the price box below */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for price box */
 }
 
 /* Specific styling for the left price box */
 .left-price-box {
-  padding: 1px 4px;      /* Adjust padding for size */
-  font-size: 14px;         /* Adjust font size */
-  bottom: 210.5px;            /* Adjust distance from the bottom */
-  left: 430px;              /* Adjust distance from the left side */
-  width: 50px;            /* Adjust the width */
-  height: auto;            /* Adjust the height */
+    padding: 1px 4px; /* Adjust padding for size */
+    font-size: 14px; /* Adjust font size */
+    bottom: 210.5px; /* Adjust distance from the bottom */
+    left: 430px; /* Adjust distance from the left side */
+    width: 50px; /* Adjust the width */
+    height: auto; /* Adjust the height */
+    transition-delay: 0.3s; /* Delay the price box appearance */
 }
 
 /* Specific styling for the right price box */
 .right-price-box {
-  padding: 1px 4px;       /* Adjust padding for size */
-  font-size: 14px;         /* Adjust font size */
-  bottom: 210px;            /* Adjust distance from the bottom */
-  right: 50px;             /* Adjust distance from the right side */
-  width: 50px;            /* Adjust the width */
-  height: auto;            /* Adjust the height */
+    padding: 1px 4px; /* Adjust padding for size */
+    font-size: 14px; /* Adjust font size */
+    bottom: 210px; /* Adjust distance from the bottom */
+    right: 50px; /* Adjust distance from the right side */
+    width: 50px; /* Adjust the width */
+    height: auto; /* Adjust the height */
+    transition-delay: 0.3s; /* Delay the price box appearance */
 }
+
+/* Hover effect to show the price box with a sliding effect */
+.left-container:hover .price-box,
+.right-container:hover .price-box {
+    opacity: 1; /* Make the price box visible on hover */
+    transform: translateY(0); /* Slide the price box into place */
+}
+
 
 /* New Section Styling */
 .new-section {
