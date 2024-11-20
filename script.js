@@ -63,6 +63,49 @@ window.addEventListener('scroll', animateOnScroll);
 
 // Initial call to trigger animations for elements already in view
 window.addEventListener('load', animateOnScroll);
+// Function to handle the collapsible behavior
+document.querySelectorAll('.collapsible-header').forEach(header => {
+  header.addEventListener('click', function () {
+      const content = this.nextElementSibling;
+      const icon = this.querySelector('.icon');
 
+      // Check if content is already open
+      if (content.classList.contains('open')) {
+          content.classList.remove('open'); // Collapse content
+          icon.textContent = "+"; // Change icon to +
+      } else {
+          content.classList.add('open'); // Expand content
+          icon.textContent = "-"; // Change icon to -
+      }
+  });
+});
 
+// Elements
+const changeRegionBtn = document.querySelector('.change-region-btn');
+const dialogOverlay = document.querySelector('#dialog-overlay');
+const closeBtn = document.querySelector('.close-btn');
+const regionHeaders = document.querySelectorAll('.region-header'); // To handle multiple regions
+const regionLists = document.querySelectorAll('.region-list'); // To handle multiple region lists
+const toggleIcons = document.querySelectorAll('.toggle-icon'); // For toggling + and -
+
+// Function to open the dialog
+function openDialog() {
+    dialogOverlay.classList.add('active');  // Make the dialog visible
+    dialogOverlay.classList.remove('hidden');  // Remove hidden class
+}
+
+// Function to close the dialog
+function closeDialog() {
+    dialogOverlay.classList.remove('active');  // Hide the dialog
+    dialogOverlay.classList.add('hidden');  // Add the hidden class back
+}
+
+// Toggle region list visibility
+function toggleRegionList(event) {
+    const regionList = event.target.nextElementSibling; // The list of regions
+    const toggleIcon = event.target.querySelector('.toggle-icon'); // The + or - icon
+
+    regionList.classList.toggle('hidden'); // Toggle the visibility of the region list
+    toggleIcon.textContent = regionList.classList.contains('hidden') ? '+' : '-'; // Change the icon
+}
 
